@@ -15,8 +15,9 @@ const Grade = (props) => {
   const getGrade = (id) => {
     GradeDataService.get(id)
       .then((response) => {
-        setCurrentGrade(response.data);
-        console.log(response.data);
+        const [grade] = response.data
+        setCurrentGrade(grade);
+        console.log(grade);
       })
       .catch((e) => {
         console.log(e);
